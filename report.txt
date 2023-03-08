@@ -1,0 +1,14 @@
+# Report notes
+  |  Report of 3-5 pages summarising the techniques and features you’ve  |
+  |  used for the classification, as well as the performance results.    |
+  |                                                                      |
+  |  The report should discuss any decisions you have made durinng the   |
+  |  implementation, discuss the details of the classifiers and features |
+  |  you've implemented, show results, a brief discussion of the results |
+  |______________________________________________________________________|
+## Preprocessing
+
+
+## Representation: BoW
+## Representation: TFIDF BoW
+## Representation: GloVE
