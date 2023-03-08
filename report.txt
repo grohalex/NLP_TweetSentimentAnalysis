@@ -2,13 +2,61 @@
   |  Report of 3-5 pages summarising the techniques and features you’ve  |
   |  used for the classification, as well as the performance results.    |
   |                                                                      |
-  |  The report should discuss any decisions you have made durinng the   |
+  |  The report should discuss any decisions you have made during the    |
   |  implementation, discuss the details of the classifiers and features |
   |  you've implemented, show results, a brief discussion of the results |
   |______________________________________________________________________|
+
 ## Preprocessing
 
+  # -> what about removing the @usernames/#hashtags, is it advisable?
+I decided to include usernames because some of them can convey semantic meaning which is correlated
+across the community. In case of using bigrams, the careless removing of usernames removing would
+introduce considerable noise because 2 tokens might end up next to each other even though they are
+never used like that in real language. The same goes for hashtags, for example:
+"The voice of #blacklivesmatter is on twitter" will turn into "The voice of is on twitter" although
+'of is' is not a proper english bigram.
+In summary, keeping the #hashtags and @usernames in the text is conceptually meaningful because they
+are becoming part of people's communication, gaining new meanings, among the younger generations and
+social media users. Specifically, those features can help with semantic segmentation in two ways:
+Directly, by providing a potentially useful features and indirectly by not introducing noise in case
+they were removed.
+
+  # -> need to remove URLs!
+My implementation of URLs removal acknowledges that this task has to be a trade off between recall
+(what proportion of URLs we successfully remove) versus the false positive rate (how many non-URLs
+do we remove). I decided to remove all words which include 'http' which seems very accurate as there
+are not many contexts where you would use this substring outside of the URL. Unfortunately, large
+proportion of URLs are not in this form. Therefore, I also remove any word with 'www' substring, that
+is also a reasonable assumption. The problematic then becomes only the case when users type only the
+form of URL without the prefix: google.com, google.it, google.fr and so on. However, this can be easily
+mistaken with (incorrect) punctuation, an abbreviation etc. In those cases, we do not want to remove
+the phrase. Therefore, I decided to use computationally more demanding approach by listing 100 most
+common extensions (.com, .net, .gov...) and delete the URLs in the form 'web.extension', which preserves
+most cases in which we want to keep the words while deleting most or all unwanted URLs.
+
+  # -> There is a lot of noise/mistakes in the data and absence of interpunction.
+On thing I noticed about the data during preprocessing is how much noise there is - many posts have
+typos or are not written in grammatically correct English and this would certainly negatively impact
+the performance of the classifier because the feature representation of the tweets will be inherently
+noisy. Most tweets do not contain interpunction and even if they do, it is highly inconsistent or wrong.
+I was originally considering using a start of the sentence token and end of the sentence token to gain
+some potentially useful features. However, due to inconsistency and scarcity of interpunction, I decided
+not to implement this because its benefits will not be significant and due to the noise it could be also
+decreasing the accuracy of the classifier.
+
+  # -> what about adding of the starting token?
+Specifically, the starting/ending token of the tweet is another feature which could be considered but in
+the BoW representation it would be superfluous, hence not useful, because every single tweet will have
+this feature. Where it might have certain impact on the accuracy of the classifier is if we used bigram
+features, because a word which occurs at the beginning or at the end might change the overall sentiment
+of the tweet: consider the case when somebody says "I like this film. Just kidding." The fact that 'kidding'
+is at the end of the sentence completely changes its sentiment. Therefore, it could in be a useful feature.
 
 ## Representation: BoW
+- my implementation
+- sparse vectors -> more efficient ways to encode
+- no use for starting/ending tokens
 ## Representation: TFIDF BoW
+- my implementation of TFIDF wighting - it might add more precise features
 ## Representation: GloVE
