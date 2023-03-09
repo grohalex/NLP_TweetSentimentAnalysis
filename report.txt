@@ -8,7 +8,7 @@
   |______________________________________________________________________|
 
 ## Preprocessing
-
+----------------
   # -> what about removing the @usernames/#hashtags, is it advisable?
 I decided to include usernames because some of them can convey semantic meaning which is correlated
 across the community. In case of using bigrams, the careless removing of usernames removing would
@@ -54,9 +54,16 @@ of the tweet: consider the case when somebody says "I like this film. Just kiddi
 is at the end of the sentence completely changes its sentiment. Therefore, it could in be a useful feature.
 
 ## Representation: BoW
+----------------------
 - my implementation
 - sparse vectors -> more efficient ways to encode
 - no use for starting/ending tokens
+
 ## Representation: TFIDF BoW
+----------------------------
 - my implementation of TFIDF wighting - it might add more precise features
+
 ## Representation: GloVE
+------------------------
+- the word lists from GloVE 6B do not contain hashtags nor usernames. Solution would be to use a different
+GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
