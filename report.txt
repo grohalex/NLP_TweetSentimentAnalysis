@@ -26,8 +26,16 @@ they were removed.
 a generic username, because they do not seem very helpful overall and probably just add noise in the
 system as they are not typically features representative of the sentiment (although in theory they could be)
 
-  # Emoticons
-->  There are 59 types of emoticons and they are used 17019 times in the training set.
+  # Emoticons and emojis
+-> There are 59 types of emoticons and they are used 17019 times in the training set.
+-> There are 305 types of emojis and they are used 1794 times in the training set.
+The way to handle emoticons was to identify the emoticon strings and then replace them with a substitute
+text-only strings so that I remove other non-alphanumeric chars.
+
+Therefore, I decided to account only for emoticons and get rid of any emojis in the tweets because the
+benifit of including those features seems to be significant only for emoticons. For even further refinement
+of the, it might be beneficial to include emojis too, but it will have only limited impact of the performance.
+
 
 
   # -> need to remove URLs!
@@ -44,7 +52,7 @@ common extensions (.com, .net, .gov...) and delete the URLs in the form 'web.ext
 most cases in which we want to keep the words while deleting most or all unwanted URLs.
 
   # -> There is a lot of noise/mistakes in the data and absence of interpunction.
-On thing I noticed about the data during preprocessing is how much noise there is - many posts have
+One thing I noticed about the data during preprocessing is how much noise there is - many posts have
 typos or are not written in grammatically correct English and this would certainly negatively impact
 the performance of the classifier because the feature representation of the tweets will be inherently
 noisy. Most tweets do not contain interpunction and even if they do, it is highly inconsistent or wrong.
