@@ -88,6 +88,9 @@ GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
 ## Building Classifiers
 
 ## KNN
-- The implementation is too slow, I have to account for sparseness of the BOW feature vectors
+- The implementation is too slow, I have to account for sparseness of the BOW feature vectors (?)
+- combined train and dev set
+- best avg score with emoticons and without usernames: 0.35
+
 
 ## Evaluation and Comparison of Classifiers
