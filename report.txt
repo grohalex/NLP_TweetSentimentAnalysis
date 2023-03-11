@@ -22,6 +22,14 @@ social media users. Specifically, those features can help with semantic segmenta
 Directly, by providing a potentially useful features and indirectly by not introducing noise in case
 they were removed.
 
+-> However, after testing the performance of the simple classifiers, I decided to replace usernames with
+a generic username, because they do not seem very helpful overall and probably just add noise in the
+system as they are not typically features representative of the sentiment (although in theory they could be)
+
+  # Emoticons
+->  There are 59 types of emoticons and they are used 17019 times in the training set.
+
+
   # -> need to remove URLs!
 My implementation of URLs removal acknowledges that this task has to be a trade off between recall
 (what proportion of URLs we successfully remove) versus the false positive rate (how many non-URLs
