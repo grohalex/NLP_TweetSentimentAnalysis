@@ -1,9 +1,12 @@
-/BOWsparse.pkl
 /preprocessing.pkl
+/preprocessing-noEmo.pkl
+/preprocessing-plain.pkl
+/preprocessing-usernames.pkl
+
+/BOWsparse.pkl
 /BOWsparse-usernames.pkl
 /BOWsparse-noEmo.pkl
 /BOWsparse-plain.pkl
 
-/preprocessing-noEmo.pkl
-/preprocessing-plain.pkl
-/preprocessing-usernames.pkl
+/TFIDFsparse.pkl
+/TFIDFsparse-plain.pkl
