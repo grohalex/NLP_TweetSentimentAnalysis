@@ -10,3 +10,5 @@
 
 /TFIDFsparse.pkl
 /TFIDFsparse-plain.pkl
+
+/embeddings.pkl

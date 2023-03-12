@@ -86,6 +86,7 @@ is at the end of the sentence completely changes its sentiment. Therefore, it co
 - the word lists from GloVE 6B do not contain hashtags nor usernames. Solution would be to use a different
 GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
 -> no hashtags in GloVE 6B -> I need to delete hashtags from preprocessing!
+-> added a weighted average for the <OOV> vector
 
 
 ## Building Classifiers
