@@ -2,11 +2,13 @@
 /preprocessing-noEmo.pkl
 /preprocessing-plain.pkl
 /preprocessing-usernames.pkl
+/preprocessing-glove.pkl
 
 /BOWsparse.pkl
 /BOWsparse-usernames.pkl
 /BOWsparse-noEmo.pkl
 /BOWsparse-plain.pkl
+/BOWsparse-glove.pkl
 
 /TFIDFsparse.pkl
 /TFIDFsparse-plain.pkl

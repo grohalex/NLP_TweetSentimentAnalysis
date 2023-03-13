@@ -74,8 +74,8 @@ is at the end of the sentence completely changes its sentiment. Therefore, it co
 - my implementation
 - sparse vectors -> more efficient ways to encode
 - no use for starting/ending tokens
-  * BOWsparse -> usernames replaced
-  * BOWsparse-plain -> usernames kept
+  * BOWsparse-glove.pkl -> usernames replaced according to GloVe preprocessing
+  * BOWsparse-plain.pkl -> usernames kept
 
 ## Representation: TFIDF BoW
 ----------------------------
@@ -111,9 +111,16 @@ GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
 
 ## Linear SVC
 -  without emoticons,    with usernames,BOW- sparse implem.: avg F1 = 0.576, t = 0.3
+-  without emoticons, without usernames,BOW- sparse implem.: avg F1 = 0.573, t = 0.3
 
 -  without emoticons, without usernames,TFIDF - sparse implem.: avg F1 = 0.58, t = 0.256
 -  without emoticons,    with usernames,TFIDF - sparse implem.: avg F1 = 0.571, t = 0.296
 
+## Logistic Regression (MaxEnt) Classifier
+- without emoticons,  without usernames,BOW- sparse implem.: avg F1 = 0.588, t = 7.1
+- without emoticons,     with usernames,BOW- sparse implem.: avg F1 = 0.594, t = 8.3
+
+-  without emoticons, without usernames,TFIDF - sparse implem.: avg F1 = 0.602, t = 7.8
+-  without emoticons,    with usernames,TFIDF - sparse implem.: avg F1 = 0.599, t = 7.8
 
 ## Evaluation and Comparison of Classifiers
