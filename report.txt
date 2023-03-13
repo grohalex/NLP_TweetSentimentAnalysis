@@ -26,11 +26,18 @@ they were removed.
 a generic username, because they do not seem very helpful overall and probably just add noise in the
 system as they are not typically features representative of the sentiment (although in theory they could be)
 
+-> Including Usernames can lead to overfitting because one particular username might be associated with
+ mostly positive/negative tweets. It might even improve our performance on smaller sets of tweets (as we
+  could see) but in the end it will inevitably not generalise very well and sooner or later our model
+ will be overfitting and conceptually it will not lead to any improved understanding of language.
+
   # Emoticons and emojis
--> There are 59 types of emoticons and they are used 17019 times in the training set.
--> There are 305 types of emojis and they are used 1794 times in the training set.
+-> There are 59 types of emoticons and they are used 17019 times in the training set. -> wrong nums
+-> There are 305 types of emojis and they are used 1794 times in the training set.    -> wrong nums
 The way to handle emoticons was to identify the emoticon strings and then replace them with a substitute
 text-only strings so that I remove other non-alphanumeric chars.
+
+-> SVM coeficients show that emoticons have a big impact on classical classification (figure top20)
 
 Therefore, I decided to account only for emoticons and get rid of any emojis in the tweets because the
 benifit of including those features seems to be significant only for emoticons. For even further refinement
