@@ -104,6 +104,7 @@ GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
 
 ## Multinomial NB
 -  without emoticons,    with usernames,BOW - sparse implem.: avg F1 = 0.512, t = 0.05
+-  without emoticons, without usernames,BOW - sparse implem.: avg F1 = 0.517, t = 0.04
 
 -  without emoticons, without usernames,TFIDF - sparse implem.: avg F1 = 0.49, t = 0.05
 -  without emoticons,    with usernames,TFIDF - sparse implem.: avg F1 = 0.473, t = 0.055
