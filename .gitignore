@@ -15,3 +15,8 @@
 /TFIDFsparse-plain.pkl
 
 /embeddings.pkl
+/xy_train.pkl
+/xy_dev.pkl.pkl
+/xy_test1.pkl
+/xy_tes2.pkl
+/xy_test3.pkl
