@@ -3,6 +3,7 @@
 /preprocessing-plain.pkl
 /preprocessing-usernames.pkl
 /preprocessing-glove.pkl
+/preprocessing-sent-ID.pkl
 
 /BOWsparse.pkl
 /BOWsparse-usernames.pkl
