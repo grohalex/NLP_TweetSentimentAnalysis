@@ -131,4 +131,17 @@ GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
 -  without emoticons, without usernames,TFIDF - sparse implem.: avg F1 = 0.602, t = 7.8
 -  without emoticons,    with usernames,TFIDF - sparse implem.: avg F1 = 0.599, t = 7.8
 
+## LSTM implementation
+
+-> v0 - simple LSTM
+-> v1 - LSTM with additional hidden layer
+    -> v1.1 (v1) on 10000 vocab
+-> v2 - LSTM with additional hidden layer and dropout
+
+
+-> the size of vocabulary is quite limited at 5000 words, I checked the difference in performance with 10000 vocab
+    -> indeed, the lstm performs better with larger vocabulary - this means that if we should use only 5000 words,
+    we have to choose them wisely and frequency of the word is not necessarily the best approach
+
+
 ## Evaluation and Comparison of Classifiers
