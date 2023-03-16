@@ -147,7 +147,9 @@ GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
     -> normal weighting: avg F1 = 0.549
     -> 2f-1s  weighting: avg F1 = 0.583 !!
     -> 1f-1s  weighting: avg F1 = 0.574
--> truncating v1 to only size 20 - there are lot of zeros, because most tweets are short
+-> v1 - adding truncation for each batch - there are lot of zeros, because lot of tweets are short
+    -> this implementation of truncation is very batch_size dependent - it does not truncate much for larger batches
+    -> 2f-1s weighting, batch 8: avg F1 =
 
 
 
