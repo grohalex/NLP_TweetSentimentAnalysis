@@ -139,9 +139,17 @@ GloVE system which was trained with twitter datasets (glove.twitter.27B.zip).
 -> v2 - LSTM with additional hidden layer and dropout
 
 
+
 -> the size of vocabulary is quite limited at 5000 words, I checked the difference in performance with 10000 vocab
     -> indeed, the lstm performs better with larger vocabulary - this means that if we should use only 5000 words,
     we have to choose them wisely and frequency of the word is not necessarily the best approach
+-> checking for v1 - LSTM with weighted approach vocab selection (weighting rule 2*frequency + 1*sentiment)
+    -> normal weighting: avg F1 = 0.549
+    -> 2f-1s  weighting: avg F1 = 0.583 !!
+    -> 1f-1s  weighting: avg F1 = 0.574
+-> truncating v1 to only size 20 - there are lot of zeros, because most tweets are short
+
+
 
 
 ## Evaluation and Comparison of Classifiers
